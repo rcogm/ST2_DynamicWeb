@@ -1,0 +1,49 @@
+<snippet>
+	<content>
+	<![CDATA[
+	<!--@LoopStart(Columns)-->
+		<!--@Column.Name-->
+		<!--@Column.SortUrl-->
+	<!--@LoopEnd(Columns)-->
+
+	<!--@LoopStart(Rows)-->
+		<!--@LoopStart(Row)-->
+			<!--@Row.ColumnName-->
+			<!--@Row.Value-->
+			<!--@Row.Count-->
+			<!--@Column.Count-->
+			<!--@Row.DetailUrl-->
+		<!--@LoopEnd(Row)-->
+	<!--@LoopEnd(Rows)-->
+
+	<!--@If Defined(DwPaging.PreviousButtonText)-->
+		<!--@DwPaging.FirstPageLink-->
+		<!--@DwPaging.PreviousPageLink-->
+	 	<!--@DwPaging.PreviousPageLink-->
+	 	<!--@DwPaging.PreviousButtonText-->
+	<!--@EndIf(DwPaging.PreviousButtonText)-->
+
+	<!--@LoopStart(DwPaging.LoopPageGroup)-->
+		<!--@If Defined(PageGroup.ActivePage)-->
+		<!--@PageGroup.PageNumber-->
+		<!--@EndIf(PageGroup.ActivePage)-->
+		
+		<!--@If Not Defined(PageGroup.ActivePage)-->
+		<!--@PageGroup.PageLink-->
+		<!--@PageGroup.PageNumber-->
+		<!--@EndIf(PageGroup.ActivePage)-->
+	<!--@LoopEnd(DwPaging.LoopPageGroup)-->
+
+	<!--@If Defined(DwPaging.NextButtonText)-->
+		<!--@DwPaging.NextPageLink-->
+		<!--@DwPaging.NextButtonText-->
+		<!--@DwPaging.NextPageLink-->
+		<!--@DwPaging.LastPageLink-->
+	<!--@EndIf(DwPaging.NextButtonText)-->
+	]]>
+	</content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>dwDatalist</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

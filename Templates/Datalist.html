@@ -1,0 +1,81 @@
+<style type="text/css">
+/*** ADD THIS TO YOUR STYLESHEET OR DELETE ***/
+table.datalist {width:100%; border-collapse: collapse;}
+table.datalist tr td {border-bottom: 1px solid #ccc;}
+table.datalist thead tr {background: #ccc;}
+table.datalist thead tr th.sorted {background: #333; color:#fff;}
+table.datalist tbody tr:nth-child(even) {background: #eee}
+
+.paging {overflow: auto;}
+.paging dt {float: left;}
+.paging dd {float: right;}
+.paging ul {list-style: none; margin: 0; padding: 0; overflow: auto;}
+.paging ul li {float: left; display: block; padding: .3em;}
+</style>
+
+<!-- 
+	BASIC DATALIST LAYOUT
+	DW Features used:
+	-> Sorting (if enabled)
+	-> DetailURL (if enabled)
+	-> Paging 
+-->
+
+<table class="datalist">
+	<thead>
+		<tr>
+		<!--@LoopStart(Columns)-->
+			<!--@If Defined(Column.SortUrl)-->
+			<th><a href="<!--@Column.SortUrl-->"><!--@Column.Name--></a></th>
+			<!--@EndIf(Column.SortUrl)-->
+			<!--@If(GetMaster(Columns.SortBy)=Column.Name))-->
+			<th class="sorted <!--@Columns.SortOrder-->"><a href="<!--@Column.SortUrl-->"><!--@Column.Name--></a></th>
+			<!--@EndIf(Column.SortUrl)-->
+			<!--@If Not Defined(Column.SortUrl)-->
+			<th><!--@Column.Name--></th>
+			<!--@EndIf(Column.SortUrl)-->
+		<!--@LoopEnd(Columns)-->
+		</tr>
+	</thead>
+	<tbody>
+	<!--@LoopStart(Rows)-->
+		<tr>
+		<!--@LoopStart(Row)-->
+			<td>
+			<!-- ADDITIONAL VALUES: @Row.ColumnName, @Row.Count, @Column.Count -->
+			<!--@If Defined(Row.DetailUrl)-->
+				<a href="<!--@Row.DetailUrl-->"><!--@Row.Value--></a>  
+			<!--@EndIf(Row.DetailUrl)-->
+			<!--@If Not Defined(Row.DetailUrl)-->
+				<!--@Row.Value-->
+			<!--@EndIf(Row.DetailUrl)-->
+			</td>
+		<!--@LoopEnd(Row)-->
+		</tr>
+	<!--@LoopEnd(Rows)-->
+	</tbody>
+</table>
+
+<dl class="paging">
+  <dt><!--@Translate(showingPage, "Showing page")--> <!--@DwPaging.CurrentPage--> <!--@Translate(of, "of")--> <!--@DwPaging.PageCount--></dt>
+  <dd>
+		<ul>
+			<li class="first"><a href="<!--@DwPaging.FirstPageLink-->"><!--@Translate(firstPage, "First page")--></a></li>
+			<!--@If Defined(DwPaging.PreviousButtonText)-->
+			<li class="next"><a href="<!--@DwPaging.PreviousPageLink-->"><!--@DwPaging.PreviousButtonText--></a></li>
+			<!--@EndIf(DwPaging.PreviousButtonText)-->
+			<!--@LoopStart(DwPaging.LoopPageGroup)-->
+			<!--@If(PageGroup.ActivePage='True')-->
+			<li class="active"><!--@PageGroup.PageNumber--></li>
+			<!--@EndIf-->
+			<!--@If(PageGroup.ActivePage!='True')-->
+			<li><a href="<!--@PageGroup.PageLink-->"><!--@PageGroup.PageNumber--></a></li>
+			<!--@EndIf-->
+			<!--@LoopEnd(DwPaging.LoopPageGroup)-->
+			<!--@If Defined(DwPaging.NextButtonText)-->
+			<li class="next"><a href="<!--@DwPaging.NextPageLink-->"><!--@DwPaging.NextButtonText--></a></li>
+			<!--@EndIf(DwPaging.NextButtonText)-->
+			<li class="last"><a href="<!--@DwPaging.LastPageLink-->"><!--@Translate(lastPage, "Last page")--></a></li>
+		</ul>
+  </dd>
+</dl> 

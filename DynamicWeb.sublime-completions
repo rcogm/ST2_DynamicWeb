@@ -6,7 +6,7 @@
 		{ "trigger": "DWTranslateTag", "contents": "<!--@Translate(${1:TranslateKey}, \"${2:Default translation}\"${3:, global})-->" },
 		{ "trigger": "DWTemplateTag", "contents": "<!--@DwTemplateTags-->" },
 		{ "trigger": "DWTT", "contents": "<!--@DwTemplateTags-->" },
-		{ "trigger": "Server:Request", "contents": "<!--@Server:Request.${1:id in lowercase}-->" },
+		{ "trigger": "ServerRequest", "contents": "<!--@Server:Request.${1:id in lowercase}-->" },
 		{ "trigger": "GetMaster", "contents": "<!--@GetMaster(${1:TemplateTag})--> " },
 
 		{ "trigger": "DWDefined", "contents": "<!--@If Defined(${1:TemplateTag})-->${2}<!--@EndIf(${1:TemplateTag})-->" },

@@ -1,0 +1,22 @@
+<snippet>
+	<content>
+	<![CDATA[
+	<!--@Form.Start-->
+	    <!--@Form.Hidden-->
+	    
+		<!--@LoopStart(Form.Fields)-->
+			<!--@Field.Name-->
+			<!--@Field.Label-->
+			<!--@Field.Control-->
+			<!--@Field.Description-->
+		<!--@LoopEnd(Form.Fields)-->
+
+		<!--@Form.Button.Reset--><!--@Form.Button.Submit-->
+	<!--@Form.End-->
+	]]>
+	</content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>dwForms</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
