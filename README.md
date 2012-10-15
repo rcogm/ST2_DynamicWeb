@@ -5,29 +5,29 @@ Contains completions, snippets and templates for DynamicWeb
 
 ## Install ##
 
-Place "DynamicWeb.sublime-completions" inside "Sublime\Data\Packages\User"
+Place files inside "Sublime\Data\Packages\User"
 
 ## Tips & Tricks ##
 
-###For DwTemplateTags###
+#### DwTemplateTags####
 Use dwtt
 
-###For TranslateTags###
+####TranslateTags####
 Use dwtrans
 
-###For Defined / Not Defined###
+####Defined / Not Defined####
 Use dwdefined / dwdefinednot
 
-###For If / If Not###
+####If / If Not####
 Use dwif / dwifnot
 
-###For DwContent###
+####DwContent####
 Use dwcontent
 
-###For DwNavigation###
+####DwNavigation####
 Use dwnavigation
 
-###For Server:Request###
+####Server:Request####
 Use serverrequest
 
 ## TODO ##
