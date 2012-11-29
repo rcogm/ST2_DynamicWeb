@@ -37,5 +37,5 @@ Use serverrequest
 * Add more snippets
 
 ## Resources ##
-[JSFiddle which can generate content for completions]http://jsfiddle.net/netsi1964/E5WFx/
-[Dynamicweb template tags]http://templates.dynamicweb-cms.com/
+* JSFiddle which can generate content for completions: http://jsfiddle.net/netsi1964/E5WFx/
+* Dynamicweb template tags: http://templates.dynamicweb-cms.com/
